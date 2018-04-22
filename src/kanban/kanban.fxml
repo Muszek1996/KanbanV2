@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="borderPane" prefHeight="612.0000999999975" prefWidth="730.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kanban.mainController">
+  <bottom>
+    <Button mnemonicParsing="false" onAction="#buttonAction" style="-fx-background-color: &#10; linear-gradient(#29A5FF, #2387FF);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: white;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );&#10;" text="Add new task" textFill="WHITE" BorderPane.alignment="CENTER">
+      <effect>
+        <Shadow color="#646464">
+          <input>
+            <DropShadow color="#00000099" height="11.0" offsetY="1.0" radius="5.0" width="11.0" />
+          </input>
+        </Shadow>
+      </effect>
+      <font>
+        <Font name="Gill Sans MT Bold" size="22.0" />
+      </font>
+      <BorderPane.margin>
+        <Insets bottom="25.0" top="20.0" />
+      </BorderPane.margin>
+    </Button>
+  </bottom>
+  <center>
+    <VBox alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+      <children>
+        <Label text="IN PROGRESS">
+          <font>
+            <Font name="Gill Sans MT Condensed" size="22.0" fx:id="x1" />
+          </font>
+          <VBox.margin>
+            <Insets top="15.0" fx:id="x2" />
+          </VBox.margin>
+        </Label>
+        <ListView fx:id="inProgress" maxWidth="-Infinity" minWidth="10.0" onContextMenuRequested="#contextMenuAction" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+          <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+          </VBox.margin>
+        </ListView>
+      </children>
+    </VBox>
+  </center>
+  <left>
+    <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="TOP_CENTER">
+      <children>
+        <Label fx:id="todolabel" font="$x1" text="TO DO" VBox.margin="$x2" />
+        <ListView fx:id="todo" maxWidth="-Infinity" minWidth="10.0" onContextMenuRequested="#contextMenuAction" orientation="VERTICAL" prefHeight="200.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
+          <VBox.margin>
+            <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" fx:id="x3" />
+          </VBox.margin>
+        </ListView>
+      </children>
+    </VBox>
+  </left>
+  <right>
+    <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="250.0" BorderPane.margin="$x2">
+      <children>
+        <Label font="$x1" text="DONE" />
+        <ListView fx:id="done" maxWidth="-Infinity" minWidth="10.0" onContextMenuRequested="#contextMenuAction" orientation="VERTICAL" prefHeight="200.0" prefWidth="250.0" VBox.margin="$x3" VBox.vgrow="ALWAYS" />
+      </children>
+    </VBox>
+  </right>
+  <top>
+    <MenuBar style="-fx-background-color: #2387FF;&#10;-fx-font-size:16 pt;&#10;    -fx-font-family: &quot;Segoe UI Light&quot;;&#10;    -fx-text-fill: #dedede;&#10;&#10;" useSystemMenuBar="false">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+                  <MenuItem fx:id="menuItemOpen" mnemonicParsing="false" onAction="#open" text="Open" />
+                  <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#save" text="Save" />
+            <MenuItem fx:id="closeMenuOption" mnemonicParsing="false" onAction="#closeAction" text="Close" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Import/Export">
+              <items>
+                <MenuItem fx:id="menuItemImport" mnemonicParsing="false" onAction="#importCSV" text="Import" />
+                  <MenuItem fx:id="menuItemExport" mnemonicParsing="false" onAction="#exportCSV" text="Export" />
+              </items>
+            </Menu>
+        <Menu fx:id="about" mnemonicParsing="false" text="About">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAboutDialog" text="About author" />
+          </items>
+        </Menu>
+      </menus>
+      <BorderPane.margin>
+        <Insets />
+      </BorderPane.margin>
+    </MenuBar>
+  </top>
+</BorderPane>

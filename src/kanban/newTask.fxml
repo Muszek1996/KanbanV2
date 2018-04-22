@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kanban.taskController">
+  <children>
+    <VBox alignment="TOP_CENTER" layoutX="0.0" layoutY="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" spacing="10.0">
+      <children>
+        <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="590.0" spacing="15.0">
+          <children>
+            <Label alignment="TOP_LEFT" contentDisplay="LEFT" prefWidth="35.0" text="Title" />
+            <TextField fx:id="taskName" alignment="TOP_LEFT" prefHeight="20.0" prefWidth="477.0" />
+          </children>
+        </HBox>
+        <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="590.0" spacing="15.0">
+          <children>
+            <Label alignment="TOP_LEFT" contentDisplay="LEFT" prefWidth="50.000099999997474" text="Priority">
+              <HBox.margin>
+                <Insets top="5.0" />
+              </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="priorityChoiceBox" prefWidth="477.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+          </children>
+        </HBox>
+        <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="590.0" spacing="15.0">
+          <children>
+            <Label alignment="TOP_LEFT" contentDisplay="LEFT" prefWidth="58.0" text="Exp date" />
+                  <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="477.0" />
+          </children>
+        </HBox>
+        <TextArea fx:id="descriptionArea" prefWidth="200.0" wrapText="true">
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </TextArea>
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addNewTask" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: &#10; linear-gradient(#29A5FF, #2387FF);&#10;    -fx-background-radius: 8,7,6;&#10;    -fx-background-insets: 0,1,2;&#10;    -fx-text-fill: white;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );&#10;&#10;" text="Add">
+          <font>
+            <Font size="22.0" />
+          </font>
+          <VBox.margin>
+            <Insets bottom="5.0" top="15.0" />
+          </VBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+      </padding>
+    </VBox>
+  </children>
+  <padding>
+    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+  </padding>
+</Pane>
